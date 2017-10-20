@@ -1,95 +1,88 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('page-title',env('APP_NAME'))
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('css')
+    <style>.section{
+    text-align: center;
+            vertical-align: middle;
+    }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+ul{
+    text-align: center;
+}
+        #menu li {
+            display:inline-block;
+            margin: 10px;
+            color: #000;
+            background:#fff;
+            background: rgba(255, 255, 255, 0.5);
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+        #menu li.active{
+            background:#666;
+            background: rgba(255,255,255,0.9);
+            color: #fff;
+        }
+        #menu li a{
+            text-decoration:none;
+            color: #000;
+        }
+        #menu li.active a:hover{
+            color: #000;
+        }
+        #menu li:hover{
+            background: rgba(255,255,255, 0.8);
+        }
+        #menu li a,
+        #menu li.active a{
+            padding: 8px;
+            display:block;
+        }
+        #menu li.active a{
+            color: #fff;
+        }
+        #menu{
+            position:fixed;
+            top:0;
+            left:0;
+            height: 40px;
+            z-index: 70;
+            width: 100%;
+            padding: 0;
+            margin:0;
+        }
 
-            .full-height {
-                height: 100vh;
-            }
+    </style>
+@stop
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+@section('content')
+    <ul id="menu">
 
-            .position-ref {
-                position: relative;
-            }
+        <li data-menuanchor="first"><a href="#first"></a> </li>
+        <li data-menuanchor="second"><a href="#second"></a> </li>
+    </ul>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <div class="section" style="background-color: black" data-anchor="first">
+<h2>1</h2>
+    </div>
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
+    <div class="section" style="background-color: black" data-anchor="second">
+            <h2>2</h2>
+    </div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+    @stop
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+@section('js')
+    <script type="text/javascript">
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+        jQuery(document).ready(function() {
+            jQuery('#fullpage').fullpage({
+                anchors: ['first','second'],
+                menu:'#menu'
+            });
+        });
+    </script>
+    @stop
