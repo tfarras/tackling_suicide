@@ -1,88 +1,78 @@
-@extends('layouts.app')
+<!DOCTYPE Html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('page-title',env('APP_NAME'))
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('css')
-    <style>.section{
-    text-align: center;
-            vertical-align: middle;
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{Html::style('/css/gradient.css')}}
+    {{Html::script('/assets/global/plugins/jquery.min.js')}}
+<style>
+    html,body {
+        height: 100%;
+
+    }
+    .main {
+        height: 100%;
+        width: 100%;
+        display: table;
+    }
+    .wrapper {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
     }
 
-ul{
-    text-align: center;
-}
-        #menu li {
-            display:inline-block;
-            margin: 10px;
-            color: #000;
-            background:#fff;
-            background: rgba(255, 255, 255, 0.5);
-            -webkit-border-radius: 4px;
-            border-radius: 4px;
-        }
-        #menu li.active{
-            background:#666;
-            background: rgba(255,255,255,0.9);
-            color: #fff;
-        }
-        #menu li a{
-            text-decoration:none;
-            color: #000;
-        }
-        #menu li.active a:hover{
-            color: #000;
-        }
-        #menu li:hover{
-            background: rgba(255,255,255, 0.8);
-        }
-        #menu li a,
-        #menu li.active a{
-            padding: 8px;
-            display:block;
-        }
-        #menu li.active a{
-            color: #fff;
-        }
-        #menu{
-            position:fixed;
-            top:0;
-            left:0;
-            height: 40px;
-            z-index: 70;
-            width: 100%;
-            padding: 0;
-            margin:0;
-        }
 
-    </style>
-@stop
 
-@section('content')
-    <ul id="menu">
+    .ImgField img{
+        display: block;
+        position: absolute;
+        margin: 0;
+    }
 
-        <li data-menuanchor="first"><a href="#first"></a> </li>
-        <li data-menuanchor="second"><a href="#second"></a> </li>
-    </ul>
+    .second{
+        left: +35%;
+    }
 
-    <div class="section" style="background-color: black" data-anchor="first">
-<h2>1</h2>
+    .first {
+        left: +35%;
+        z-index:9999;
+        transition-duration:0.96s;
+        -webkit-transition-duration:0.96s;
+        -moz-transition-duration:0.96s;
+        -o-transition-duration:0.96s;
+    }
+
+    .image.first:hover {
+        opacity:0.00;
+    }
+</style>
+</head>
+<body>
+
+<div class="main" style="text-align: center" >
+    <div class="wrapper">
+        <a href="./stay"  id="name">
+            <div  class="ImgField" >
+                <img class="image first" width="30%" src="/assets/images/logo_white.png"/>
+            </div>
+
+            <img class="image second" width="30%" src="/assets/images/logo_black.png"/>
+        </a>
     </div>
 
 
-    <div class="section" style="background-color: black" data-anchor="second">
-            <h2>2</h2>
-    </div>
-
-    @stop
-
-@section('js')
-    <script type="text/javascript">
-
-        jQuery(document).ready(function() {
-            jQuery('#fullpage').fullpage({
-                anchors: ['first','second'],
-                menu:'#menu'
-            });
-        });
+</div>
+<script>
     </script>
-    @stop
+
+
+
+</body>
+
+</html>

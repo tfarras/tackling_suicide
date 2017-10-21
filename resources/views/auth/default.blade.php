@@ -30,7 +30,7 @@
 
     @yield('styles')
 </head>
-<body class="login" style="background-color: #2b466b !important;">
+<body class="login" style="background-image: url('/assets/images/bg2.jpg') !important;">
 <div class="logo">
 
 </div>

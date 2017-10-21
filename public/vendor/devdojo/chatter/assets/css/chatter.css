@@ -32,18 +32,11 @@ body {
   outline: none;
 }
 #chatter #chatter_hero {
-  background-image: url('../images/hero_bg.jpg');
   width: 100%;
-  min-height: 150px;
   position: relative;
   background-size: cover;
   background-position: center center;
   text-align: center;
-}
-#chatter #chatter_hero img {
-  max-height: 60px;
-  margin: 45px auto;
-  position: relative;
 }
 #chatter #chatter_hero #chatter_hero_dimmer {
   background: rgba(0, 0, 0, 0.2);
@@ -302,11 +295,11 @@ body {
 }
 #chatter ul.discussions li a.discussion_list,
 #chatter ul.discussions li .chatter_posts {
-  background: #ffffff;
+  background: tra;
   padding: 15px;
   -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
-  border-top: 1px solid #f1fcff;
+  border-top: 1px solid #f1fcff;  
   text-decoration: none;
   display: block;
   position: relative;
