@@ -1,0 +1,17 @@
+BODY {
+    margin: 0;
+
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(black,slategray,black);
+    background-position: 0 0;
+    animation: background 4s infinite alternate;
+}
+
+@keyframes background {
+    100% {
+        background-position: 0px 700px;
+    }
+}
