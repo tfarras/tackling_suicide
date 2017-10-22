@@ -53,7 +53,7 @@
     <div style="text-align: center;">
     <a href="/quiz">
     <div class="semi-transparent-button" style="display: inline-block; margin-right: 5%; margin-top: 15%">
-<h1>Past a quiz about your moral state.</h1>
+<h1>Complete a quiz about your moral state.</h1>
     </div></a>
     <a href="/forums">
         <div class="semi-transparent-button" style="display: inline-block;margin-left: 5%; margin-top: 15%">
