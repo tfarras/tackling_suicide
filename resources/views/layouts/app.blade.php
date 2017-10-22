@@ -13,9 +13,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('css/jquery.fullPage.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/global/plugins/bootstrap/css/bootstrap.min.css')}}">
     @yield('css')
 </head>
-<body style="background-image: url('/assets/images/bg2.jpg');">
+<body @if(auth()->check()) style="background-image: url('/bg/{{Auth::user()->background}}')" @else style="background-image: url('/bg/bg2.jpg')" @endif >
     <div id="app">
             <nav class="navbar navbar-default navbar-static-top" style="background: transparent; border:none;">
                 <div class="container">
@@ -30,7 +31,7 @@
                         </button>
 
                         <!-- Branding Image -->
-                        <a class="navbar-brand" style="color:white;" href="{{ url('/') }}">
+                        <a class="navbar-brand" style="color:white;" href="{{ url('/home') }}">
                             {{ config('app.name', 'Laravel') }}
                         </a>
                     </div>
@@ -53,6 +54,16 @@
                                     </a>
 
                                     <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a style="color:black;" href="/quiz">
+                                                Quiz
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a style="color:black;" href="/personalization">
+                                                Personalization
+                                            </a>
+                                        </li>
                                         <li>
                                             <a style="color:black;" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();

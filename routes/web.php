@@ -24,3 +24,16 @@ Route::get('/home',function (){
 Route::get('/stay',function(){
     return view('stay');
 });
+
+Route::get('/quiz',function(){
+    return view('quize');
+});
+
+Route::get('/choose',function (){
+    return view('choose');
+});
+
+Route::get('/personalization','PersonalizationController@index');
+Route::post('/changeBG','PersonalizationController@updateBG');
+Route::post('/changeAvatar','PersonalizationController@updateAvatar');
+Route::post('/resetBG','PersonalizationController@resetBG');

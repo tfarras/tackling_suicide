@@ -10,6 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     {{Html::style('/css/gradient.css')}}
+    <link rel="stylesheet" href="/assets/global/plugins/font-awesome/css/font-awesome.min.css">
     {{Html::script('/assets/global/plugins/jquery.min.js')}}
 <style>
     html,body {
@@ -51,12 +52,17 @@
     .image.first:hover {
         opacity:0.00;
     }
+    .fa:hover{
+        color: rgba(0,0,0,0.6) !important;
+    }
 </style>
 </head>
 <body>
 
 <div class="main" style="text-align: center" >
+
     <div class="wrapper">
+        <a href="/forums" ><i class="fa fa-comments" style="position: fixed; color:whitesmoke; left: 2%; top:2%; font-size: 350%;" aria-hidden="true"></i></a>
         <a href="./stay"  id="name">
             <div  class="ImgField" >
                 <img class="image first" width="30%" src="/assets/images/logo_white.png"/>
